@@ -1,0 +1,52 @@
+extends layout
+block content
+    main
+        header
+            .navbar.navbar-inverse(role='navigation')
+                .container
+                    .navbar-header
+                        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href='#') Finance Control
+
+                    .navbar-collapse.collapse
+                        form.navbar-form.navbar-right(role='form',method='post', action='logout')
+                            .form-group
+                                p#username #{username}
+                                button.btn.btn-default(type='submit') LogOut
+
+        #left.container
+            .well
+                ul.nav.nav-pills.nav-stacked
+                    li.active
+                        a(href='#')
+                            span.badge.pull-right #{walletsLength}
+                            | Wallets
+        #right.container
+            .well
+                h2 Wallet list
+                table.table
+                    thead
+                        tr
+                            td Name
+                            td Type
+                            td Value
+                    tbody
+                        !{wallets}
+                button#addWalletBtn.btn.btn-info(type='submit') + Add Wallet
+
+    #filledBg
+    #AddWalletForm
+        form(role='form', method='post', action='addWallet')
+            .form-group
+                input.form-control(type='text', name='walletName', placeholder='Wallet name')
+            .form-group
+                select.form-control(name='walletType', placeholder='Type of wallet')
+                    option(value='cash') cash
+                    option(value='bank') bank
+                    option(value='inet') inet
+            .form-group
+                button.btn.btn-success(type='erroe') Create wallet

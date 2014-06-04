@@ -1,0 +1,112 @@
+/*------------ Import the main css files -------*/
+@import "bootstrap.css";
+@import "bootstrap-theme.css";
+/*------------ GLOBAL --------------------------*/
+*{
+    font-family: "Lucida Grande", "Trebuchet MS", sans-serif;
+}
+/*------------ HEADER --------------------------*/
+.form-group
+{
+	margin-left:5px;
+}
+#username
+{
+    color: #adadad;
+    margin-top: 7px;
+    height:10px;
+    margin-right: 20px;
+    float:left;
+}
+.navbar
+{
+    border-radius: 0;
+    height: 10%;
+}
+/*------------ BUTTONS +, -) -------------------*/
+
+#FCButtons
+{
+	width:400px;
+	height:200px;
+	margin: auto;
+	-x-margin-top:200px;
+}
+#plus,#minus
+{
+	width:  50%;
+	height: 1%;
+	font:   bold 100px arial,sans-serif;
+	border-radius: 45px;
+}
+.btn:focus
+{
+	outline: 0;
+}
+
+/*------------ ARTICLE -----------------------------*/
+#left
+{
+    width: 21%;
+    float:left;
+    padding-right: 0;
+}
+#right
+{
+    width:79%;
+    float:right;
+}
+table
+{
+    border-top:1px solid #adadad;
+    border-bottom:1px solid #adadad;
+}
+thead
+{
+    font-weight: bold;
+    background-color: #DDDDFF;
+}
+tbody
+{
+    background-color: #F5F5FF;
+}
+h2{
+    margin-top: 0px;
+}
+.income
+{
+    background-color: #DDFFDD;
+}
+.outcome
+ {
+     background-color: #FFDDDD;
+ }
+.operations
+{
+    border-radius: 40px;
+}
+
+#addOutcomeBtn
+{
+    margin-left:10px;
+}
+#filledBg{
+    display: none;
+    position:absolute;
+    width: 100%;
+    height: 91.6%;
+    margin-top:-20px;
+    background-color: #000000;
+    opacity: 0.2;
+}
+#AddWalletForm,#AddIncomeForm,#AddOutcomeForm
+{
+    display: none;
+    position:absolute;
+    margin:40px 25% 0 25%;
+    padding:20px;
+    width:50%;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    border: 1px solid #adadad;
+}

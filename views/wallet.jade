@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Система управления финансами
+        link(rel='stylesheet', type='text/css', href='../css/style.css')
+        script(type='text/javascript', src='../js/jquery-2.0.2.js')
+        script(type='text/javascript', src='../js/bootstrap.js')
+        script(type='text/javascript', src='../js/main.js')
+    body
+        main
+            header
+                .navbar.navbar-inverse(role='navigation')
+                    .container
+                        .navbar-header
+                            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                                span.sr-only Toggle navigation
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+                            a.navbar-brand(href='../') Finance Control
+                        .navbar-collapse.collapse
+                            form.navbar-form.navbar-right(role='form',method='post', action='logout')
+                                .form-group
+                                    p#username #{username}
+                                    button.btn.btn-default(type='submit') LogOut
+            #left.container
+                .well
+                    ul.nav.nav-pills.nav-stacked
+                        li.active
+                            a(href='../')
+                                span.badge.pull-right #{walletsLength}
+                                | Wallets
+            #right.container
+                .well
+                    h2 Operation List
+                    table.table.operations
+                        thead
+                            tr
+                                td Comment
+                                td Value
+                                td Time
+                        tbody
+                            !{operations}
+                    button#addIncomeBtn.btn.btn-success(type='button') + Add income
+                    button#addOutcomeBtn.btn.btn-danger(type='button') - Add outcome
+        #filledBg
+        #AddIncomeForm
+            #cont
+                form(role='form', method='post', action='addIncome')
+                    .form-group
+                        input.form-control(type='text', name='operationValue', placeholder='Value')
+                    .form-group
+                        input.form-control(type='text', name='operationComment', placeholder='Your comment')
+                    .form-group
+                        button.btn.btn-success(type='submit') Add income
+        #AddOutcomeForm
+            #cont
+                form(role='form', method='post', action='addOutcome')
+                    .form-group
+                        input.form-control(type='text', name='operationValue', placeholder='Value')
+                    .form-group
+                        input.form-control(type='text', name='operationComment', placeholder='Your comment')
+                    .form-group
+                        button.btn.btn-danger(type='submit') Add outcome
